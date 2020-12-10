@@ -41,6 +41,9 @@ const (
 	E_ACCOUNT_NOT_EXIST = 1018 // 账号不存在
 	E_AICAPTCHA_ERROR   = 1019 // 人机验证失败
 	E_INVALID_VERSION   = 1020 // 版本号不匹配
+
+	E_SERVER_ERROR = 1021 // 服务错误
+	E_MINGANCI     = 1022 // 敏感词
 )
 
 const (
@@ -77,6 +80,9 @@ const (
 	E_MSG_ACCOUNT_NOT_EXIST = "账号不存在"
 	E_MSG_AICAPTCHA_ERROR   = "人机验证失败"
 	E_MSG_INVALID_VERSION   = "版本号不匹配"
+
+	E_MSG_MINGANCI     = "敏感词"
+	E_MSG_SERVER_ERROR = "服务错误"
 )
 
 var (
@@ -113,6 +119,8 @@ var (
 	ErrAccountNotExist = StandardError{E_ACCOUNT_NOT_EXIST, E_MSG_ACCOUNT_NOT_EXIST}
 	ErrAICaptchaError  = StandardError{E_AICAPTCHA_ERROR, E_MSG_AICAPTCHA_ERROR}
 	ErrInvalidVersion  = StandardError{E_INVALID_VERSION, E_MSG_INVALID_VERSION}
+	ErrMinganci        = StandardError{E_MINGANCI, E_MSG_MINGANCI}
+	ErrServerError     = StandardError{E_SERVER_ERROR, E_MSG_SERVER_ERROR}
 )
 
 type StandardError struct {

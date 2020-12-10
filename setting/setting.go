@@ -117,6 +117,13 @@ type Redis struct {
 
 var RedisSetting = &Redis{}
 
+type Service struct {
+	Host string
+	Port int
+}
+
+var ServiceSetting = &Service{}
+
 func Setup(filename string) {
 	Cfg, err := ini.Load(filename)
 	if err != nil {
@@ -175,4 +182,9 @@ func Setup(filename string) {
 		log.Fatalf("Cfg.MapTo RedisSetting err: %v", err)
 	}
 	RedisSetting.IdleTimeout = RedisSetting.IdleTimeout * time.Second
+
+	err = Cfg.Section("service").MapTo(ServiceSetting)
+	if err != nil {
+		log.Fatalf("Cfg.MapTo ServiceSetting err: %v", err)
+	}
 }
