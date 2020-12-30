@@ -3,9 +3,10 @@ package logging
 import (
 	"os"
 	"path/filepath"
-	"squirtle/src/common/util"
 	"strconv"
 	"time"
+
+	"github.com/zhenzhongfu/gocommon/util"
 
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/rifflock/lfshook"
